@@ -9,4 +9,8 @@
  {<<"ranch">>,
   {git,"https://github.com/ninenines/ranch",
        {ref,"3190aef88aea04d6dce8545fe9b4574288903f44"}},
-  1}].
+  1},
+ {<<"ulid">>,
+  {git,"https://github.com/savonarola/ulid.git",
+       {ref,"a58e7eb624ad13f14dde756747a0c4054dc7f03a"}},
+  0}].

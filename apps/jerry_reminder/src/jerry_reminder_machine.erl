@@ -2,7 +2,7 @@
 
 -behaviour(gen_server).
 
--export([start_link/0]).
+-export([start_link/0, set_reminder/1]).
 -export([
     init/1,
     terminate/2,
@@ -21,6 +21,8 @@ init([]) ->
     ok = init_data(),
     {ok, {}}.
 
+handle_call({set_reminder, {Id, Instant}}, _From, State) ->
+    {reply, ok, State};
 handle_call(_Msg, _From, State) ->
     {reply, ok, State}.
 
@@ -34,8 +36,14 @@ terminate(_Reason, _State) -> ok.
 
 code_change(_OldVsn, _NewVsn, State) -> {ok, State}.
 
+set_reminder({Id, Instant}) ->
+    ok = gen_server:call(?MODULE, {set_reminder, {Id, Instant}}).
+
 init_data() ->
     DataFile = filename:join([code:priv_dir(jerry_reminder), "data"]),
     {ok, ?DATA} = dets:open_file(?DATA, {file, DataFile}),
 
     ok.
+
+record({_Id, _Instant} = Record) ->
+    ok = dets:insert(?DATA, Record).
