@@ -11,3 +11,6 @@ console: release
 
 format:
 	$(REBAR) fmt
+
+eunit:
+	$(REBAR) eunit

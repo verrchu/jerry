@@ -1,8 +1,3 @@
-%%%-------------------------------------------------------------------
-%% @doc jerry_session public API
-%% @end
-%%%-------------------------------------------------------------------
-
 -module(jerry_session_app).
 
 -behaviour(application).
@@ -14,5 +9,3 @@ start(_StartType, _StartArgs) ->
 
 stop(_State) ->
     ok.
-
-%% internal functions

@@ -1,8 +1,3 @@
-%%%-------------------------------------------------------------------
-%% @doc jerry_http public API
-%% @end
-%%%-------------------------------------------------------------------
-
 -module(jerry_http_app).
 
 -behaviour(application).
@@ -14,5 +9,3 @@ start(_StartType, _StartArgs) ->
 
 stop(_State) ->
     ok.
-
-%% internal functions
