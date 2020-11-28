@@ -4,3 +4,5 @@ _build
 
 apps/jerry_grammar/src/jerry_lexer.erl
 apps/jerry_grammar/src/jerry_parser.erl
+
+apps/jerry_reminder/priv/data
