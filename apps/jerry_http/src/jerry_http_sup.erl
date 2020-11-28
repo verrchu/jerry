@@ -1,4 +1,9 @@
--module(jerry_sup).
+%%%-------------------------------------------------------------------
+%% @doc jerry_http top level supervisor.
+%% @end
+%%%-------------------------------------------------------------------
+
+-module(jerry_http_sup).
 
 -behaviour(supervisor).
 
@@ -28,3 +33,5 @@ init([]) ->
     },
     ChildSpecs = [],
     {ok, {SupFlags, ChildSpecs}}.
+
+%% internal functions

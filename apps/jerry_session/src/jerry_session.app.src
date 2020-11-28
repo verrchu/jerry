@@ -1,8 +1,8 @@
-{application, jerry, [
+{application, jerry_session, [
     {description, "An OTP application"},
     {vsn, "0.1.0"},
     {registered, []},
-    {mod, {jerry_app, []}},
+    {mod, {jerry_session_app, []}},
     {applications, [
         kernel,
         stdlib
