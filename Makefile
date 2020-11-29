@@ -1,19 +1,21 @@
 REBAR = ./rebar3
 
 compile:
-	$(REBAR) compile
+	@ $(REBAR) compile
 
 release: compile
-	$(REBAR) release
+	@ printf "CHECK PROFILE: " && test -n "$(PROFILE)" && printf "OK\n"
+	@ $(REBAR) as $(PROFILE) release
 
 console: release
-	./_build/default/rel/jerry/bin/jerry console
+	@ printf "CHECK PROFILE: " && test -n "$(PROFILE)" && printf "OK\n"
+	@ ./_build/$(PROFILE)/rel/jerry/bin/jerry console
 
 format:
-	$(REBAR) fmt
+	@ $(REBAR) fmt
 
 eunit:
-	$(REBAR) eunit
+	@ $(REBAR) eunit
 
 dialyzer: compile
-	$(REBAR) dialyzer
+	@ $(REBAR) dialyzer

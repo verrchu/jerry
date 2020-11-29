@@ -5,7 +5,8 @@
     {mod, {jerry_http_app, []}},
     {applications, [
         kernel,
-        stdlib
+        stdlib,
+        cowboy
     ]},
     {env, []},
     {modules, []},

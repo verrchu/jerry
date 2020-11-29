@@ -2,6 +2,8 @@ rebar3.crashdump
 erl_crash.dump
 _build
 
+config/sys-dev.config
+
 apps/jerry_grammar/src/jerry_lexer.erl
 apps/jerry_grammar/src/jerry_parser.erl
 
