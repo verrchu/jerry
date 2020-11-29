@@ -5,16 +5,19 @@
 -export([start_link/0]).
 -export([init/1]).
 
--define(SERVER, ?MODULE).
-
 start_link() ->
-    supervisor:start_link({local, ?SERVER}, ?MODULE, []).
+    supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 init([]) ->
     SupFlags = #{
-        strategy => one_for_all,
-        intensity => 0,
+        strategy => one_for_one,
+        intensity => 4,
         period => 1
     },
-    ChildSpecs = [],
+    ChildSpecs = [
+        #{
+            id => jerry_session_registry,
+            start => {jerry_session_registry, start_link, []}
+        }
+    ],
     {ok, {SupFlags, ChildSpecs}}.
