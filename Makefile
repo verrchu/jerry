@@ -14,3 +14,6 @@ format:
 
 eunit:
 	$(REBAR) eunit
+
+dialyzer: compile
+	$(REBAR) dialyzer

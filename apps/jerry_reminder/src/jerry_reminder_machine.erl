@@ -40,10 +40,7 @@ set_reminder({Id, Instant}) ->
     ok = gen_server:call(?MODULE, {set_reminder, {Id, Instant}}).
 
 init_data() ->
-    DataFile = filename:join([code:priv_dir(jerry_reminder), "data"]),
-    {ok, ?DATA} = dets:open_file(?DATA, {file, DataFile}),
+    DataFile = filename:join([code:priv_dir(jerry_reminder), "machine_data"]),
+    {ok, ?DATA} = dets:open_file(?DATA, [{file, DataFile}]),
 
     ok.
-
-record({_Id, _Instant} = Record) ->
-    ok = dets:insert(?DATA, Record).

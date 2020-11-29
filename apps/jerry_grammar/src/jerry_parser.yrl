@@ -16,7 +16,7 @@ Rootsymbol expr.
 expr -> in_expr: '$1'.
 expr -> at_expr: '$1'.
 
-in_expr -> in_prep intervals: {in, '$2'}.
+in_expr -> in_prep intervals: {{single, from_now}, '$2'}.
 
 at_expr -> at_prep time: {at, today, unwrap('$2')}.
 at_expr -> at_day at_prep time: {at, '$1', unwrap('$3')}.

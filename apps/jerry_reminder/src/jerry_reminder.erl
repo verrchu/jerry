@@ -4,6 +4,7 @@
 
 -export([set/1]).
 
+-spec set(reminder()) -> ok.
 set(Reminder) ->
     Instant = calculate_instant(Reminder),
     ReminderId = get_reminder_id(Reminder),
