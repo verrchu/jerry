@@ -2,7 +2,10 @@ rebar3.crashdump
 erl_crash.dump
 _build
 
-config/sys-dev.config
+config/sys.config
+
+config/templates/data/*
+!config/templates/data/example.yaml
 
 apps/jerry_grammar/src/jerry_lexer.erl
 apps/jerry_grammar/src/jerry_parser.erl

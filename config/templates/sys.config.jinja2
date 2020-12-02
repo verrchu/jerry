@@ -1,13 +1,13 @@
 [
     {jerry_http, [
-        {port, 8080},
-        {api_key, <<"TEST">>}
+        {port, {{ http.port }}},
+        {api_key, <<"{{ http.api_key }}">>}
     ]},
     {kernel, [
-        {logger_level, debug},
+        {logger_level, {{ log.level }}},
         {logger, [
             {handler, default, logger_std_h, #{
-                level => debug,
+                level => {{ log.level }},
                 filters => [
                     {skip_progress_info, {fun logger_filters:progress/2, stop}}
                 ],
