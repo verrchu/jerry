@@ -6,7 +6,9 @@
     {applications, [
         kernel,
         stdlib,
-        cowboy
+        jerry_session,
+        cowboy,
+        jiffy
     ]},
     {env, []},
     {modules, []},
